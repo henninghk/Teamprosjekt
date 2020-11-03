@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body {
+padding: 0;
+margin: 0;
+       } 
+div.page {
+height: 100vh;
+display: grid;
+grid-template-columns: 1fr, 1fr, 1fr;
+grid-template-rows: 1fr, 1fr, 1fr;
+grid-template-areas: 'linje1 linje2 linje1'
+                     'linje2 linje1 linje2'
+                     'linje1 linje2 linje1';
+}
+div.linje1 {
+text-align: center;
+background-color: aqua;
+grid-area: linje1;
+}
+div.linje2 {
+text-align: center;
+background-color: red;
+grid-area: linje2;
+}
+      </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="linje1">
+            1
+        </div>
+
+        <div class="linje2">
+            2
+        </div>
+    </div>
+    
+</body>
+</html>

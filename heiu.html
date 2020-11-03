@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TrePåRad</title>
+    <style type="text/css">
+    body {
+        background-color: black;
+    }
+    h1, h2 {
+        color: yellow;
+        text-align: center;
+   }
+    div {
+        background-color: chartreuse;
+        width: 100px;
+        height: 100px;
+        float: left;
+        margin: 0px;
+        box-shadow: white 5px 5px 5px;
+        font-size: 100px;
+        text-align: center;
+        vertical-align: middle;
+        font-family: helvetica;
+        
+    }
+    .firstInLine {
+        clear: left;
+        margin-left: 38%;
+    }
+    #topp {
+       margin-top: 5%;
+    }
+   
+    </style>
+</head>
+<body>
+    <h1> TIC TAC TOE</h1>
+    <h2> Spill med computeren </h2>
+    <div id="topp" onclick="trePåRad(this)" class="firstInLine"> </div>
+    <div id="topp" onclick="trePåRad(this)"> </div>
+    <div id="topp" onclick="trePåRad(this)"> </div>
+
+    <div onclick="trePåRad(this)" class="firstInLine"> </div>
+    <div onclick="trePåRad(this)"> </div>
+    <div onclick="trePåRad(this)"> </div>
+
+    <div onclick="trePåRad(this)" class="firstInLine"> </div>
+    <div onclick="trePåRad(this)"> </div>
+    <div onclick="trePåRad(this)"> </div>
+
+    
+
+    <script type="text/javascript">
+    function trePåRad(divElement) {
+        if (divElement.innerHTML !== 'X' && divElement.innerHTML !== 'O') {
+            divElement.innerHTML = 'X';
+
+            var divs1 = document.getElementsByTagName('div');
+            var divs2 = new Array();
+        for (var i = 0; i < divs1.length; i++) {
+	        if (divs1[i].innerHTML !== 'X' && divs1[i].innerHTML !== 'O') {
+		divs2.push(divs1[i]);
+	        }
+        }
+
+    if (divs2.length > 0) {
+        var index = Math.floor(Math.random() * divs2.length);
+        divs2[index].innerHTML = 'O';
+        divs2[index].style.color = 'blue';
+        }
+    }
+}   
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div.page {
+            display: grid;
+            grid-template-columns: 250px 250px 250px;
+            grid-template-rows: 250px 250px 250px;
+            padding: 30px;
+            grid-gap: 0px;
+        }
+
+        .linje1 {
+            background-image: url("https://billig-billy.dk/cache/1180585/magnet-3d-med-enhjoerning-fit-1600x1600x100.jpg");
+            background-size: 250px;
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        .linje2 {
+            background-image: url("https://extra-leker.freetls.fastly.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/n/t/nti-864728-d_1.jpg");
+            background-size: 250px;
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        .linje3 {
+            background-image: url("https://ae01.alicdn.com/kf/HTB1wCQAafvsK1RjSspdq6AZepXa7/Unicorn-Light-Switch-Stickers-For-Kids-Rooms-Baby-Nursery-Home-Cartoon-Cute-Animal-Horse-Unicorn-Cup.jpg_q50.jpg");
+            background-size: 250px;
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+        <div class="linje1" onclick="bytt(this)"></div>
+        <div class="linje2" onclick="bytt(this)"></div>
+        <div class="linje1" onclick="bytt(this)"></div>
+        <div class="linje2"></div>
+        <div class="linje1"></div>
+        <div class="linje2"></div>
+        <div class="linje1"></div>
+        <div class="linje2"></div>
+        <div class="linje1"></div>
+        
+    </div>
+    <script>
+        var fase = 1;
+        let currentDiv ="";
+ function changeI() {
+ let element = document.getElementById("1");
+ element.classList.toggle("linje3");
+ }
+ 
+ function bytt(bip) {
+    currentDiv = bip.outerHTML;
+    if (fase ==1) {
+        nextdiv = '<div class="linje3" onclick="bytt(this)"></div>';
+        bip.outerHTML = nextdiv;
+        console.log('currentdiv', currentDiv);
+        nextdiv = currentDiv;
+        console.log('next', nextdiv);
+        fase = 2;
+    } else  {
+        bip.outerHTML = nextdiv;
+        fase = 1;
+    }
+    }
+    
+    //bip.innerHTML = `<div class="linje3" onclick="bytt(this)"></div>`;
+
+//}
+</script>
+
+</body>
+
+</html>
